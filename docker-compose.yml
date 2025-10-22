@@ -1,0 +1,63 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: banking-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  account-service:
+    build: ./account-service
+    container_name: account-service
+    depends_on:
+      - postgres
+    environment:
+      PORT: 8081
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      GRPC_SERVER_PORT: 9090
+    ports:
+      - "9090:9090"
+      - "8081:8081"
+
+  transaction-servic:
+    build: ./transaction-servic
+    container_name: transaction-servic
+    depends_on:
+      - postgres
+      - account-service
+    environment:
+      PORT: 8082
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      GRPC_SERVER_PORT: 9091
+      GRPC_CLIENT_ACCOUNTSERVICE_ADDRESS: static://account-service:9090
+      GRPC_CLIENT_ACCOUNTSERVICE_NEGOTIATIONTYPE: PLAINTEXT
+    ports:
+      - "9091:9091"
+      - "8082:8082"
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      ACCOUNT_SERVICE_HOST: account-service
+      ACCOUNT_SERVICE_PORT: 8081
+      TRANSACTION_SERVICE_HOST: transaction-servic
+      TRANSACTION_SERVICE_PORT: 8082
+    depends_on:
+      - account-service
+      - transaction-servic
+
+volumes:
+  db_data:

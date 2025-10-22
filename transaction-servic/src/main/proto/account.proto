@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package account;
+
+option java_package = "com.umutavci.account.grpc";
+option java_outer_classname = "AccountProto";
+option java_multiple_files = true;
+
+service AccountService {
+  rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse);
+  rpc UpdateBalance(UpdateBalanceRequest) returns (UpdateBalanceResponse);
+}
+
+message GetBalanceRequest { string account_id = 1; }
+message GetBalanceResponse { double balance = 1; }
+
+message UpdateBalanceRequest {
+  string account_id = 1;
+  double amount = 2; // +credit, -debit
+}
+
+message UpdateBalanceResponse { bool success = 1; }

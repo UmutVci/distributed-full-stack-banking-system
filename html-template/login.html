@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Modern Bank - Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#008080",
+                        "background-light": "#F7F9FC",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="px-4 flex flex-1 justify-center items-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[480px] flex-1">
+                <div class="flex flex-col items-center justify-center w-full gap-6 p-8 bg-white dark:bg-background-dark rounded-xl shadow-lg">
+                    <div class="flex w-full justify-center">
+                        <img class="h-12" data-alt="Bank Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACke4g_44gEQ-7w0oixJCBvoP2AF_eI1oyDozdtJNvRdz1Rd7bMk08asDlb8xvd8oNGZlxdmqPf5T5mLzt3RnGY8Jd6r5ku9hAVCRhpcyLaYyNpPrcWVgIr3cOwfrHC3HIsdjGHNRLZaruJXmlju-lA2ZPNcAXHh6XSRUstWnEaJk-3XNz1Absz1WJKYnoT78vd7zX2JQWQ33dbbdR9EDb0VH7IX1bc9AanAI5MIgobYYzu2nBhWpajih4_ubbvhfsTsbjJ3Q84XU"/>
+                    </div>
+                    <div class="flex flex-wrap justify-center text-center gap-3 p-4">
+                        <div class="flex w-full flex-col gap-3">
+                            <p class="text-[#111618] dark:text-white text-3xl font-bold leading-tight tracking-[-0.03em]">Welcome Back</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Sign in to access your account</p>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-col gap-4">
+                        <label class="flex flex-col w-full">
+                            <p class="text-[#111618] dark:text-white text-base font-medium leading-normal pb-2">Email Address</p>
+                            <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] dark:text-white focus:outline-0 focus:ring-0 border border-[#dbe2e6] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#617c89] dark:placeholder-gray-400 p-[15px] text-base font-normal leading-normal" placeholder="Enter your email" value=""/>
+                        </label>
+                        <label class="flex flex-col w-full">
+                            <p class="text-[#111618] dark:text-white text-base font-medium leading-normal pb-2">Password</p>
+                            <div class="flex w-full flex-1 items-stretch rounded-lg">
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-[#111618] dark:text-white focus:outline-0 focus:ring-0 border border-[#dbe2e6] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#617c89] dark:placeholder-gray-400 p-[15px] border-r-0 pr-2 text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+                                <div class="text-[#617c89] dark:text-gray-400 flex border border-[#dbe2e6] dark:border-gray-700 bg-white dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="w-full flex justify-end">
+                        <a class="text-primary text-sm font-medium hover:underline" href="#">Forgot Password?</a>
+                    </div>
+                    <button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                        <span class="truncate">Sign In</span>
+                    </button>
+                    <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+                        Don't have an account? <a class="font-medium text-primary hover:underline" href="#">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>

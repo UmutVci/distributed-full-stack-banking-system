@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package transaction;
+
+option java_package = "com.umutavci.transactionservic.grpc";
+option java_outer_classname = "TransactionProto";
+option java_multiple_files = true;
+
+service TransactionService {
+  rpc Transfer(TransferRequest) returns (TransferResponse);
+  rpc GetTransactionHistory(TransactionHistoryRequest) returns (TransactionHistoryResponse);
+}
+
+message TransferRequest {
+  string from_account_id = 1;
+  string to_account_id = 2;
+  double amount = 3;
+}
+
+message TransferResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message TransactionHistoryRequest {
+  string account_id = 1;
+}
+
+message Transaction {
+  string transaction_id = 1;
+  string from_account_id = 2;
+  string to_account_id = 3;
+  double amount = 4;
+  string timestamp = 5;
+}
+
+message TransactionHistoryResponse {
+  repeated Transaction transactions = 1;
+}
