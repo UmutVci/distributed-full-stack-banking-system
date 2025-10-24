@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 
 @RestController
-@RequestMapping("/api/v1/account")
+@RequestMapping("/api/v1/accounts")
 @RequiredArgsConstructor
 public class AccountController {
 
@@ -18,7 +18,6 @@ public class AccountController {
 
     @GetMapping("/me")
     public ResponseEntity<?> getMyBalance(Authentication authentication) {
-        System.out.println("Auth object: " + authentication); // 👀
         if (authentication == null) {
             return ResponseEntity.status(401).body("Unauthorized");
         }
@@ -28,7 +27,7 @@ public class AccountController {
             return ResponseEntity.status(404).body("Account not found");
         }
         return ResponseEntity.ok(
-                new BalanceResponse(account.getAccountNumber(), account.getBalance())
+                new BalanceResponse(account.getAccountNumber(), account.getBalance(), account.getOwnerName())
         );
     }
 
@@ -42,5 +41,5 @@ public class AccountController {
         return ResponseEntity.ok(accountService.updateBalance(id, BigDecimal.valueOf(amount)));
     }
 
-    private record BalanceResponse(String accountNumber, java.math.BigDecimal balance) {}
+    private record BalanceResponse(String accountNumber, java.math.BigDecimal balance, String ownerName) {}
 }

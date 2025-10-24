@@ -1,0 +1,13 @@
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/grpc-java/com/umutavci/transaction/grpc/TransactionServiceGrpc.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransferRequest.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransferResponseOrBuilder.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransactionHistoryResponse.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/Transaction.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransactionOrBuilder.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransactionHistoryRequest.java
+/Users/umutavc/Desktop/banking-system/transaction-service/src/main/java/com/umutavci/transaction/TransactionServiceApplication.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransferRequestOrBuilder.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransferResponse.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransactionProto.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransactionHistoryRequestOrBuilder.java
+/Users/umutavc/Desktop/banking-system/transaction-service/target/generated-sources/protobuf/java/com/umutavci/transaction/grpc/TransactionHistoryResponseOrBuilder.java

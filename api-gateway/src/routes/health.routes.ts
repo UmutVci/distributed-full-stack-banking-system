@@ -1,7 +1,10 @@
 import { Router } from 'express';
+import axios from "axios";
 
-export const healthRouter = Router();
+export const router = Router();
 
-healthRouter.get('/health', (_req, res) => {
+const ACCOUNT_SERVICE = 'http://localhost:8081';
+
+router.get('/health', (_req, res) => {
     res.json({ status: 'ok' });
 });
